@@ -34,5 +34,39 @@
             app:argType="string"
             android:defaultValue="0"
             app:nullable="true"/>
+        <action
+            android:id="@+id/action_playlistDetailFragment_to_videoFragment"
+            app:destination="@id/videoFragment" >
+            <argument android:name="videoID"
+                app:argType="string"
+                android:defaultValue="null"
+                app:nullable="true"/>
+            <argument android:name="videoTitle"
+                app:argType="string"
+                android:defaultValue="null"
+                app:nullable="true"/>
+            <argument android:name="videoDesc"
+                app:argType="string"
+                android:defaultValue="null"
+                app:nullable="true"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.ulan.youtube.ui.fragments.video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <argument android:name="videoID"
+            app:argType="string"
+            android:defaultValue="null"
+            app:nullable="true"/>
+        <argument android:name="videoTitle"
+            app:argType="string"
+            android:defaultValue="null"
+            app:nullable="true"/>
+        <argument android:name="videoDesc"
+            app:argType="string"
+            android:defaultValue="null"
+            app:nullable="true"/>
     </fragment>
 </navigation>

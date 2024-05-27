@@ -5,6 +5,7 @@ import android.view.View
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.fragment.app.FragmentResultListener
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.appbar.AppBarLayout
 import com.ulan.youtube.base.BaseFragment
@@ -64,7 +65,9 @@ class PlaylistDetailFragment : BaseFragment<FragmentPlaylistDetailBinding>(),
         }
     }
 
-    private fun click(id: String?) {
+    private fun click(id: String?,title:String?,desc:String?) {
+        findNavController().navigate(PlaylistDetailFragmentDirections
+            .actionPlaylistDetailFragmentToVideoFragment().setVideoID(id).setVideoTitle(title).setVideoDesc(desc))
     }
 
     override fun onOffsetChanged(appBarLayout: AppBarLayout, offset: Int) {

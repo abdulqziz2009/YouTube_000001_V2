@@ -14,7 +14,7 @@ import com.ulan.youtube.ui.utils.loadImageURL
 
 class PlaylistVideoAdapter(
     val context: Context,
-    private val click: (id: String?) -> Unit
+    private val click: (id: String?,title:String?,desc:String?) -> Unit
 ) : ListAdapter<ItemPlayList, PlaylistVideoAdapter.PlaylistVideoViewHolder>(PlaylistVideoDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaylistVideoViewHolder {
@@ -31,7 +31,7 @@ class PlaylistVideoAdapter(
         val model = getItem(position)
         holder.onBind(model)
         holder.itemView.setOnClickListener {
-            click(model?.id)
+            click(model?.contentDetails?.videoId,model?.snippet?.title,model?.snippet?.description)
         }
     }
 
