@@ -1,4 +1,3 @@
-
 package com.ulan.youtube.ui.fragments.video
 
 import androidx.lifecycle.LiveData
@@ -16,8 +15,11 @@ class VideoPlayerViewModel(
     private var _liveData: LiveData<Resourse<BaseMainResponse<ItemPlayList>?>> = MutableLiveData()
     val liveData get() = _liveData
 
-  /*  fun getPlaylistItem(videoId: String) {
-        _liveData = repository.getVideo(videoId = videoId)
-    }*/
-}
 
+    private val _isVideoLoaded = MutableLiveData(false)
+    val isVideoLoaded: LiveData<Boolean> get() = _isVideoLoaded
+
+    fun setVideoLoaded(loaded: Boolean) {
+        _isVideoLoaded.value = loaded
+    }
+}

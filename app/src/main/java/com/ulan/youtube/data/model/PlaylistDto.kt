@@ -1,6 +1,5 @@
 package com.ulan.youtube.data.model
 
-import android.icu.text.CaseMap.Title
 import com.google.gson.annotations.SerializedName
 
 data class BaseMainResponse<T>(

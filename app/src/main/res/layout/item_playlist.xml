@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_height="80dp">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -25,15 +25,15 @@
             android:textAlignment="center"
             android:paddingStart="16dp"
             android:background="#C8000000"
-            android:text="playlist"
+            android:text="@string/txt_pl"
             android:textColor="@color/white"
-            tools:ignore="RtlCompat" />
-    <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background"
-        android:id="@+id/item_img"/>
+            tools:ignore="RtlCompat,RtlSymmetry" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/item_img"/>
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textview.MaterialTextView
