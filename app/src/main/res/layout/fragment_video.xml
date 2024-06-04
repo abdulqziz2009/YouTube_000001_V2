@@ -25,12 +25,29 @@
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp"
             >
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                >
+                <WebView
+                    android:id="@+id/web_youtube_player"
+                    android:layout_marginTop="58dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/video_player"
+                    android:layout_centerInParent="true"/>
+
+
+            </RelativeLayout>-->
 
             <androidx.appcompat.widget.Toolbar
 

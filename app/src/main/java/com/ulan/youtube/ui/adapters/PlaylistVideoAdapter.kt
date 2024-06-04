@@ -31,7 +31,7 @@ class PlaylistVideoAdapter(
         val model = getItem(position)
         holder.onBind(model)
         holder.itemView.setOnClickListener {
-            click(model?.contentDetails?.videoId,model?.snippet?.title,model?.snippet?.description)
+            click(model?.resourceId?.videoId,model?.snippet?.title,model?.snippet?.description)
         }
     }
 

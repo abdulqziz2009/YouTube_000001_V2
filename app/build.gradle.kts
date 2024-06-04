@@ -49,6 +49,8 @@ android {
 dependencies {
     implementation(libs.bundles.ui.component)
     implementation(libs.bundles.test.component)
+    //ExoPlayer
+    implementation(libs.bundles.exo.component)
 
     //Retrofit
     implementation(libs.bundles.network.component)
