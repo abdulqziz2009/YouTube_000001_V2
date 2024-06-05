@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.ulan.youtube.R
 import com.ulan.youtube.data.model.ItemPlayList
-import com.ulan.youtube.databinding.ItemPlaylistBinding
 import com.ulan.youtube.databinding.ItemVideosBinding
 import com.ulan.youtube.ui.utils.loadImageURL
 
 class PlaylistVideoAdapter(
-    val context: Context,
+    private val context:Context,
     private val click: (id: String?,title:String?,desc:String?) -> Unit
 ) : ListAdapter<ItemPlayList, PlaylistVideoAdapter.PlaylistVideoViewHolder>(PlaylistVideoDiffUtil()) {
 
@@ -31,7 +29,7 @@ class PlaylistVideoAdapter(
         val model = getItem(position)
         holder.onBind(model)
         holder.itemView.setOnClickListener {
-            click(model?.resourceId?.videoId,model?.snippet?.title,model?.snippet?.description)
+            click(model?.contentDetails?.videoId,model?.snippet?.title,model?.snippet?.description)
         }
     }
 

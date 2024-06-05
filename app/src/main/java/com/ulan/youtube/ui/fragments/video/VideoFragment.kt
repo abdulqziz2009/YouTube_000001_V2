@@ -3,7 +3,10 @@
 package com.ulan.youtube.ui.fragments.video
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.view.View
 import android.webkit.WebChromeClient
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.ulan.youtube.base.BaseFragment
 import com.ulan.youtube.databinding.FragmentVideoBinding
@@ -40,6 +43,25 @@ class VideoFragment : BaseFragment<FragmentVideoBinding>() {
 
         }
     }
+
+    override fun constructorListeners() {
+        binding.btnBack?.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        binding.btnSh?.setOnClickListener {
+            share()
+        }
+    }
+    private fun share(){
+        val videoID = args.videoID
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT,"Я поделился с тобой этим видео " +
+                "https://youtu.be/$videoID")
+        startActivity(Intent.createChooser(intent,"Поделился с тобой этим видео"))
+    }
+
+
 
 
 }
