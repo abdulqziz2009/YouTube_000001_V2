@@ -69,4 +69,8 @@
             android:defaultValue="null"
             app:nullable="true"/>
     </fragment>
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.ulan.youtube.ui.fragments.NoInternetFragment"
+        android:label="NoInternetFragment" />
 </navigation>

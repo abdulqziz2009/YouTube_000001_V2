@@ -4,7 +4,6 @@ package com.ulan.youtube.ui.fragments.video
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.view.View
 import android.webkit.WebChromeClient
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -38,10 +37,6 @@ class VideoFragment : BaseFragment<FragmentVideoBinding>() {
     override fun launchObserver() {
         binding.tvTitleVideo?.text = args.videoTitle
         binding.txtDesc?.text = args.videoDesc
-
-        viewModel.liveData.observe(viewLifecycleOwner){
-
-        }
     }
 
     override fun constructorListeners() {
